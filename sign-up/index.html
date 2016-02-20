@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="http://www.google.com/jsapi?key?ABQIAAAAKzFwP6fx6Rcj8MtCeMIlchS6ZWqEpxxfD5JEl5vIY2x5OZ265BRp9qPEyQgeJk6QL7_v57a-zUfG7g"></script>
+    <script type="text/javascript">
+        google.load("jquery", "1.4.2");
+		google.load("jqueryui", "1.8.2");
+    </script><script type="text/javascript">
+
+$(document).ready(function() {
+
+  	$("input[type=text]").focus(function(){
+
+
+    var hasError = false;
+    var emailReg = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    var emailaddressVal = $(this).val();
+	var validate = $(this).attr("validate");
+	var hit	= $(this).attr("hit");
+
+	if (hit!='no') {
+
+    if(emailaddressVal == '') {
+      $(this).addClass('error');
+      hasError = true;
+    } else { $(this).removeClass('error');  }
+
+	if (validate == 'email')
+	{
+
+		if(!emailReg.test(emailaddressVal))
+		{
+      		$('#emailConfirm').addClass('error');
+      		hasError = true;
+    	} else { $('#emailConfirm').removeClass('error'); }
+	}
+
+    if(hasError == true) {  $('#contactButton').attr('disabled', 'disabled'); $('#contactButton').removeClass('pointer'); }
+	else { $('#contactButton').removeAttr('disabled'); $('#contactButton').addClass('pointer'); }
+
+
+	}
+	$(this).attr("hit","yes");
+	});
+	$("input[type=text]").blur(function(){
+
+
+    var hasError = false;
+    var emailReg = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    var emailaddressVal = $(this).val();
+	var validate = $(this).attr("validate");
+	var hit	= $(this).attr("hit");
+
+	if (hit!='no') {
+
+    if(emailaddressVal == '') {
+      $(this).addClass('error');
+      hasError = true;
+    } else { $(this).removeClass('error');  }
+
+	if (validate == 'email')
+	{
+
+		if(!emailReg.test(emailaddressVal))
+		{
+      		$('#emailConfirm').addClass('error');
+      		hasError = true;
+    	} else { $('#emailConfirm').removeClass('error'); }
+	}
+
+    if(hasError == true) {  $('#contactButton').attr('disabled', 'disabled'); $('#contactButton').removeClass('pointer'); }
+	else { $('#contactButton').removeAttr('disabled'); $('#contactButton').addClass('pointer'); }
+
+
+	}
+	$(this).attr("hit","yes");
+	});
+
+});
+</script>
+<title> ConnectedGreek | Fraternity and Sorority Websites | Greek Web Design</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://cdn.willigant.com/static/favicons/connectedgreek.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content="Fraternity Websites, Sorority Websites"  />
+<link href="../resources/css/master.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 6]>
+    <link href="/resources/css/ie6.xcss" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/resources/css/pngFix/iepngfix_tilebg.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5176342-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+<body>
+	<div class="wrapper">
+        <div id="header">
+        <ul id="navigation">
+	<li><a id="nDemo" class="first current" href="index.html">Demo</a> </li>
+    <li><a id="nPricing" href="../pricing/index.html">Pricing</a></li>
+    <li><a id="nFeatures" href="../features/index.html">Features</a> </li>
+    <li><a id="nFaq" class="last" href="../faq/index.html">FAQ</a></li>
+</ul>        <a href="../../connectedgreek.com/index.html" id="logo">ConnectedGreek | Fraternity and Sorority Websites</a>
+       </div>
+       <div id="featureTour" class="clearfloat">
+              	<h2 class="text-center">Get excited. This website is going to be awesome.</h2>
+       	<h3 class="subtext text-center">We're happy you are making the right choice for your chapter!</h3>
+       </div>
+       <div id="getStarted">
+       		<h2 class="notmar"> Get Started</h2>
+        	<div class="bmar">Not sure which plan is for you? Paying by check? Contact us and an account manager will get in contact with you and guide you through the process.</div>
+       <form action="mailto:will@connectedgreek.com" method="POST" id="contactForm">
+       <input type="hidden" name="action" value="contact" />
+       <label> Name</label><input type="text" name="name" hit='no' value="" class="" />
+       <label class="hidden"> Email</label><input class="hidden" type="text" value="1@1.com" name="email" hit='no' />
+       <label> Email</label><input type="text" name="emailConfirm" id="emailConfirm" validate="email" value="" hit='no' class=""  />
+       <label> Organization & School</label><input type="text" name="org" class="" value=""  hit='no'/>
+       <label> Comment</label><textarea name="message"></textarea>
+       <button id="contactButton" type="submit" class="contact pointer">Contact Us</button>
+       </form>
+       </div>
+       <div id ="expressWrap">
+
+           <h2> Express Order </h2>
+           <p class="nomar nopad bmar">Use our express ordering option if you've already decided what you want. We'll ask for a little bit of information and send it over to our design team. You'll need a credit card to pay the setup fee. Choose one of our <a href="../pricing/index.html">plans</a> to get started.</p>
+           <div class="one"></div>
+           <h3>Choose a plan</h3>
+
+           <div class="selectWrap">
+           		<div class="or"></div>
+           		<div class="pricingPanels"></div>
+                <div id="drape" class="drapes drapeFratastic"><div class="check absolute"></div></div>
+
+                <div class="basicButton pointer" onClick="$('#drape').animate({'top':'12px', 'left':'-7px'},1000);$('.planReview:visible').fadeOut('slow', function() { $('#basicPlan').fadeIn('slow');   } ); $('#package').val('Basic Essentials with 6 months of hosting ($19.99/month)'); $('#amount').val('469.94'); "></div>
+                <div class="fratasticButton pointer" onClick="$('#drape').animate({'top':'12px', 'left':'110px'},1000);$('.planReview:visible').fadeOut('slow', function() { $('#fratasticPlan').fadeIn('slow'); $('#package').val('Fratastic package with 6 months of hosting ($29.99/month)'); $('#amount').val('478.94');   } ); "></div>
+                <div class="platinumButton pointer" onClick="$('#drape').animate({'top':'12px', 'left':'227px'},1000);$('.planReview:visible').fadeOut('slow', function() { $('#platinumPlan').fadeIn('slow'); $('#package').val('Platinum package with 6 months of hosting ($49.99/month) *No Setup Fee!'); $('#amount').val('299.94');    } ); "></div>
+
+               <div id="basicPlan"  class="planReview hidden">
+                    <div>
+                        <div class="check"></div>
+                        $350 setup fee
+                    </div>
+                    <div>
+                        <div class="check"></div>
+                        100MB storage for photos
+                    </div>
+                    <div>
+                        <div class="check"></div>
+                        Up to 50 member accounts
+                    </div>
+                    <div>
+                    	<div class="paypal-small tmar-5 rmar-5"></div>
+                        <div class="gmail-small tmar-5 "></div>
+                    </div>
+               </div>
+               <div id="fratasticPlan"  class="planReview">
+                    <div>
+                        <div class="check"></div>
+                        $299 setup fee
+                    </div>
+                    <div>
+                        <div class="check"></div>
+                        1GB storage for photos
+                    </div>
+                    <div>
+                        <div class="check"></div>
+                        	&#8734; Member Accounts
+                    </div>
+                    <div>
+                    	<div class="paypal-small tmar-5 rmar-5"></div>
+                        <div class="wepay-small tmar-5 rmar-5"></div>
+                        <div class="gmail-small tmar-5 "></div>
+                        <div class="facebook-small tmar-5 lmar-5"></div>
+                    </div>
+               </div>
+               <div id="platinumPlan"  class="planReview hidden">
+                    <div>
+                        <div class="check"></div>
+                        No setup fee*
+                    </div>
+                    <div>
+                        <div class="check"></div>
+                        2.5GB storage for photos
+                    </div>
+                    <div>
+                        <div class="check"></div>
+                        	&#8734; Member Accounts
+                    </div>
+                    <div>
+                        <div class="check"></div>
+                        	Alumni Website
+                    </div>
+                    <div>
+                    	<div class="paypal-small tmar-5 rmar-5"></div>
+                        <div class="wepay-small tmar-5 rmar-5"></div>
+                        <div class="gmail-small tmar-5 "></div>
+                        <div class="facebook-small tmar-5 lmar-5"></div>
+                    </div>
+               </div>
+           </div>
+           <div class="clearfloat"></div>
+           <div class="two"></div>
+           <h3>Pay setup fee with credit card</h3>
+           <div class="creditCards"></div>
+           <div class="three"></div>
+           <h3>Fill out design questionaire</h3>
+           <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_xclick" />
+            <input type="hidden" name="business" value="55AUUPVJSUTR2" />
+            <input type="hidden" name="item_name" id="package" value="Fratastic package with 6 months of hosting ($29.99/month)" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="hidden" name="amount" id="amount" value="478.94" />
+            <input name="no_shipping" type="hidden" id="no_shipping" value="1" />
+            <input name="no_note" type="hidden" id="no_note" value="1" />
+            <input name="page_style" type="hidden"  value="ConnectedGreek" />
+            <input name="return" type="hidden"  value="http://www.connectedgreek.com/paid-via-paypal/" />
+            <input name="cancel_return" type="hidden"  value="http://www.connectedgreek.com/pricing/" />
+           <button class="continue">Continue</button>
+           </form>
+		</div>
+
+       </div>
+       <div class="clearfloat"></div>
+    </div>
+    <div id="footer">
+	<div class="wrapper">
+        <div class="column1">
+            <h4> ConnectedGreek </h4>
+            <a href="../features/index.html">Professional Design</a>
+            <a href="../features/index.html">Easy to Use Editor</a>
+            <a href="../features/index.html">Member Management</a>
+            <a href="../features/index.html">Newsletters</a>
+            <a href="../features/index.html">Donations & Finances</a>
+            <a href="../features/index.html">Full Feature List</a>
+
+
+        </div>
+        <div class="column2">
+            <h4> Resources </h4>
+            <a href="../faq/index.html">Frequently Asked Questions</a>
+            <a href="../pricing/index.html">Pricing Plans</a>
+            <a href="http://www.connectedgreek.com/affiliate-program/">Affiliate Program</a>
+            <a href="http://www.connectedgreek.com/member-login/">Member Login</a>
+        </div>
+        <div class="column4">
+            <h4> Contact Us </h4>
+            <a href="index.html#">704.916.9455</a>
+            <a href="index.html">Email Us</a>
+            <a href="index.html">Sign Up</a>
+        </div>
+        <div class="column3">
+            <h4>WilliGant</h4>
+            <a href="http://willigant.com#!OurTeam">Our Team</a>
+            <a href="http://willigant.com#!Careers">Careers</a>
+            <a href="../privacy/index.html">Privacy</a>
+            <a href="../terms-of-service/index.html">Terms of Service</a>
+        </div>
+    </div>
+    <div class="clearfloat"></div>
+    <div class="text-center tmar-d">&copy; 2009 - 2016 ConnectedGreek | Fraternity & Sorority Websites </div>
+    <div class="text-center small">All Rights Reserved. ConnectedGreek is owned and operated by WilliGant Ltd</div>
+    <div class="relative tmar-d"><a id="whiteWilligant" href="http://www.willigant.com" target="_blank"></a> </div>\    <div class="clearfloat"></div>
+</div>
+<!-- ClickDesk - <a href='http://www.clickdesk.com'> Live Chat Service </a> for websites -->
+<script type='text/javascript'>
+    var _glc =_glc || [];
+    _glc.push('ag9jb250YWN0dXN3aWRnZXRyEAsSB3dpZGdldHMY8dz9Agw');
+    var glcpath = (('https:' == document.location.protocol) ? 'https://contactuswidget.appspot.com/livily/browser/' : 'http://gae.clickdesk.com/livily/browser/');
+var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+var glcspt = document.createElement('script'); glcspt.type = 'text/javascript'; glcspt.async = true;glcspt.src = glcpath + 'livechat.js';
+var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
+</script><noscript><p><a href='http://gae.clickdesk.com/clickdeskchat.jsp?widget_id=ag9jb250YWN0dXN3aWRnZXRyEAsSB3dpZGdldHMY8dz9Agw' >Live Support Software</a></p></noscript>
+</body>
+</html>
